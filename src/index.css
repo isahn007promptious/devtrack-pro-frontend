@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Glassmorphism theme configurations and global scrollbar styles */
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+                      radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%),
+                      radial-gradient(at 100% 0%, hsla(339,49%,30%,0.1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80;
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl p-6 transition-all duration-300 hover:border-slate-700/65 hover:bg-slate-900/60;
+}
+
+.glass-input {
+  @apply w-full bg-slate-950/50 border border-slate-800 rounded-lg px-4 py-2 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all;
+}
+
+.glass-btn-primary {
+  @apply px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all transform hover:-translate-y-0.5 cursor-pointer disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.glass-btn-secondary {
+  @apply px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/50 rounded-lg transition-all cursor-pointer disabled:opacity-50;
+}
+
+.glass-btn-danger {
+  @apply px-4 py-2 bg-red-600/90 hover:bg-red-500 text-white font-medium rounded-lg shadow-lg shadow-red-500/20 transition-all cursor-pointer disabled:opacity-50;
+}
+
+/* Custom fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
