@@ -17,7 +17,7 @@ const VerifyEmail = () => {
     }
 
     client
-      .get(`/api/auth/verify?token=${token}`)
+      .post(`/api/auth/verify-email?token=${token}`)
       .then(() => {
         setStatus('success');
         setMsg('Your email has been verified successfully!');
