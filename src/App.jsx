@@ -37,8 +37,7 @@ function App() {
             {/* Public Auth Routes */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RouteWrapper element={<Register />} />} />
-            <Route path="/verify" element={<VerifyEmail />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
 
             {/* Protected Workspace Layout */}
