@@ -26,8 +26,8 @@ const JoinOrg = () => {
       return;
     }
 
-    client
-      .post(`/api/organizations/invitations/accept?token=${token}`)
+   client
+  .post('/api/organizations/join', { token })
       .then((res) => {
         setStatus('success');
         setMsg('Successfully joined the organization!');
